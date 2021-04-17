@@ -1,0 +1,2 @@
+S:\repos\3-2\OTP\x64\Debug\OTP.exe
+S:\repos\3-2\OTP\x64\Debug\OTP.pdb
