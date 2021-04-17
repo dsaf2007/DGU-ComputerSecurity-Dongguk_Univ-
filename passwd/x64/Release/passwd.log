@@ -1,0 +1,21 @@
+﻿  main.cpp
+S:\repos\3-2\passwd\main.cpp(61,22): warning C4244: '인수': 'ULONGLONG'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\repos\3-2\passwd\main.cpp(102,17): warning C4101: 'end' :참조되지 않은 지역 변수입니다.
+S:\repos\3-2\passwd\main.cpp(102,10): warning C4101: 'start' :참조되지 않은 지역 변수입니다.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\utility(246,1): warning C4244: '초기화 중': '_Ty'에서 '_Ty2'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              _Ty=double
+          ]
+          and
+          [
+              _Ty2=float
+          ]
+S:\repos\3-2\passwd\main.cpp(81): message : 컴파일되는 함수 템플릿 인스턴스화 'std::pair<std::string,float>::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char>>,double,0>(std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char>>,double> &&) noexcept'에 대한 참조를 확인하세요.
+S:\repos\3-2\passwd\main.cpp(81): message : 컴파일되는 함수 템플릿 인스턴스화 'std::pair<std::string,float>::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char>>,double,0>(std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char>>,double> &&) noexcept'에 대한 참조를 확인하세요.
+  코드를 생성하고 있습니다.
+  3 of 287 functions ( 1.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  코드를 생성했습니다.
+  passwd.vcxproj -> S:\repos\3-2\passwd\x64\Release\passwd.exe

@@ -1,0 +1,2 @@
+S:\repos\3-2\SimpleSubstitutionCipher\x64\Debug\SimpleSubstitutionCipher.exe
+S:\repos\3-2\SimpleSubstitutionCipher\x64\Debug\SimpleSubstitutionCipher.pdb
