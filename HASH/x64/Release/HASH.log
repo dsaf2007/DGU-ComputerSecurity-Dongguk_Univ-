@@ -1,0 +1,9 @@
+﻿  main.cpp
+S:\repos\security\HASH\main.cpp(24,7): warning C4552: '/': 식의 결과가 사용되지 않습니다.
+S:\repos\security\HASH\main.cpp(37,22): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다.
+  2 of 208 functions ( 1.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  코드를 생성했습니다.
+  HASH.vcxproj -> S:\repos\security\HASH\x64\Release\HASH.exe
