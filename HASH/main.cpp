@@ -12,28 +12,47 @@ uint64_t changeEndian(uint64_t x)
 	x = ((x << 16) & 0xFFFF0000FFFF0000ULL) | ((x >> 16) & 0x0000FFFF0000FFFFULL);
 	return (x << 32) | (x >> 32);
 }
-std::string dec2bi(uint8_t dec)
+
+std::string dec2bi(int dec)
 {
-	std::string s;
+	std::string s="";
+	int n = dec;
 	while (dec > 1)
 	{
 		if (dec % 2 == 1)
-			s += '1';
+		{
+			s += "1";
+		}
 		else
-			s += '0';
-		dec / 2;
+		{
+			s += "0";
+		}
+		dec /= 2;
 	}
-	s += '1';
+	s += "1";
+	
+	int length = 8 - s.length();
+	for (int i = 0; i < length; i++)
+	{
+		s += "0";
+	}
 	reverse(s.begin(), s.end());
-
 	return s;
 }
-
-int preProcessing(std::vector<int>& input)
+std::string toBinary(int n)
+{
+	std::string r;
+	while (n != 0) {
+		r += (n % 2 == 0 ? "0" : "1");
+		n /= 2;
+	}
+	return r;
+}
+unsigned long long preProcessing(std::vector<int>& input)
 {
 	std::string output = "";
 	input.push_back(0b10000000);
-	int binary=0;
+	unsigned long long binary=0;
 	int L = input.size();
 
 	int k = 64 - (((L % 64) + 9) % 64);
@@ -48,10 +67,10 @@ int preProcessing(std::vector<int>& input)
 	auto ptr = reinterpret_cast<uint8_t*>(&bitLengthInBigEndian);
 
 	input.insert(std::end(input), ptr, ptr + 8);
-	 std::cout << input[63];
+	//std::cout << dec2bi(input[0]);
 	for (int i = 0; i < input.size(); i++)
 	{
-		output += dec2bi(input[i]);
+		output += toBinary(input[i]);
 	}
 
 	for (int i = 0; i < output.length(); i++)
@@ -63,9 +82,9 @@ int preProcessing(std::vector<int>& input)
 }
 
 
-double hashing(double A,int m,int x)
+double hashing(double A,int m,unsigned long long x)
 {
-	double hash = m * ((x*A)-(int)(x*A));
+	double hash = m * ((x*A)-(long long)(x*A));
 
 	return hash;
 }
@@ -77,20 +96,20 @@ int main()
 	std::cin >> x;
 	std::cout << "A : ";
 	std::cin >> A;
-
+	
 	std::vector<int> initial;
 	
 	for (int i = 0; i < x.length(); i++)
 	{
 		initial.push_back(((int)x[i]));
 	}
-	std::cout << initial[0];
-	int x_pre=0;
+	//std::cout << dec2bi(initial[1]);
+	unsigned long long x_pre=0;
 	x_pre=preProcessing(initial);
 
 	double result;
 
-	result = hashing(A, 512, x_pre);
+	result = hashing(A, 2048, x_pre);
 
 	std::cout << "hash result : " << result << std::endl;
 

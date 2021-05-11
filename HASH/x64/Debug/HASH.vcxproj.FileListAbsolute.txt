@@ -1,0 +1,2 @@
+S:\repos\security\HASH\x64\Debug\HASH.exe
+S:\repos\security\HASH\x64\Debug\HASH.pdb
