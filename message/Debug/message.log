@@ -1,0 +1,33 @@
+﻿  DES.cpp
+S:\repos\security\message\DES.cpp(333,23): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+S:\repos\security\message\DES.cpp(392,23): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  main.cpp
+S:\repos\security\message\CTR.h(48,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+S:\repos\security\message\CTR.h(60,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+S:\repos\security\message\CTR.h(72,44): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+S:\repos\security\message\CTR.h(85,46): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+S:\repos\security\message\CTR.h(111,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+S:\repos\security\message\CTR.h(133,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+S:\repos\security\message\main.cpp(11,16): warning C4838: 'int'에서 'char'(으)로의 변환에는 축소 변환이 필요합니다.
+S:\repos\security\message\main.cpp(11,132): warning C4305: '초기화 중': 'int'에서 'char'(으)로 잘립니다.
+S:\repos\security\message\main.cpp(11,16): warning C4309: '초기화 중': 상수 값이 잘립니다.
+S:\repos\security\message\main.cpp(11,23): warning C4838: 'int'에서 'char'(으)로의 변환에는 축소 변환이 필요합니다.
+S:\repos\security\message\main.cpp(11,23): warning C4309: '초기화 중': 상수 값이 잘립니다.
+S:\repos\security\message\main.cpp(11,30): warning C4838: 'int'에서 'char'(으)로의 변환에는 축소 변환이 필요합니다.
+S:\repos\security\message\main.cpp(11,30): warning C4309: '초기화 중': 상수 값이 잘립니다.
+S:\repos\security\message\main.cpp(11,37): warning C4838: 'int'에서 'char'(으)로의 변환에는 축소 변환이 필요합니다.
+S:\repos\security\message\main.cpp(11,37): warning C4309: '초기화 중': 상수 값이 잘립니다.
+S:\repos\security\message\main.cpp(11,54): warning C4838: 'int'에서 'char'(으)로의 변환에는 축소 변환이 필요합니다.
+S:\repos\security\message\main.cpp(11,54): warning C4309: '초기화 중': 상수 값이 잘립니다.
+S:\repos\security\message\main.cpp(11,66): warning C4838: 'int'에서 'char'(으)로의 변환에는 축소 변환이 필요합니다.
+S:\repos\security\message\main.cpp(11,66): warning C4309: '초기화 중': 상수 값이 잘립니다.
+S:\repos\security\message\main.cpp(11,73): warning C4838: 'int'에서 'char'(으)로의 변환에는 축소 변환이 필요합니다.
+S:\repos\security\message\main.cpp(11,73): warning C4309: '초기화 중': 상수 값이 잘립니다.
+S:\repos\security\message\main.cpp(26,26): warning C4101: 'tm_min' :참조되지 않은 지역 변수입니다.
+S:\repos\security\message\main.cpp(26,9): warning C4101: 'tm_day' :참조되지 않은 지역 변수입니다.
+S:\repos\security\message\main.cpp(26,34): warning C4101: 'tm_sec' :참조되지 않은 지역 변수입니다.
+S:\repos\security\message\main.cpp(26,17): warning C4101: 'tm_hour' :참조되지 않은 지역 변수입니다.
+S:\repos\security\message\main.cpp(51,15): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+S:\repos\security\message\main.cpp(53,12): warning C4101: 'result' :참조되지 않은 지역 변수입니다.
+  코드를 생성하고 있습니다...
+  message.vcxproj -> S:\repos\security\message\Debug\message.exe
