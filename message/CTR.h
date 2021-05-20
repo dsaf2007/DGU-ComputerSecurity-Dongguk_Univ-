@@ -12,7 +12,7 @@ public:
 		input_string = input;
 		for (int i = 0; i < 8; i++)
 		{
-			nonce += arr[rand() % 16];
+			nonce += arr[i];
 		}
 
 	}
@@ -34,7 +34,7 @@ public:
 			str_vec.push_back(input_string.substr(16 * block_num, length % 16));
 			for (int j = 0; j < 16 - last_block_length; j++)
 			{
-				str_vec.back() += arr[rand() % 16];
+				str_vec.back() += arr[0];
 			}
 		}
 
@@ -93,49 +93,7 @@ public:
 		}
 	}
 
-	std::string exec_enc()
-	{
-		//std::thread t1, t2, t3, t4;
-		std::cout << "thread";
-		std::thread t1(&CTR::encrypt, this, 0);
-		std::thread t2(&CTR::encrypt, this, 1);
-		std::thread t3(&CTR::encrypt, this, 2);
-		std::thread t4(&CTR::encrypt, this, 3);
 
-		t1.join();
-		t2.join();
-		t3.join();
-		t4.join();
-
-		std::string enc_str = "";
-		for (int i = 0; i < enc_vec.size(); i++)
-		{
-			enc_str += enc_vec[i];
-		}
-		return enc_str;
-	}
-
-
-	std::string exec_dec()
-	{
-		//std::thread t1, t2, t3, t4;
-		std::thread t1(&CTR::decrypt, this, 0);
-		std::thread t2(&CTR::decrypt, this, 1);
-		std::thread t3(&CTR::decrypt, this, 2);
-		std::thread t4(&CTR::decrypt, this, 3);
-
-		t1.join();
-		t2.join();
-		t3.join();
-		t4.join();
-
-		std::string dec_str = "";
-		for (int i = 0; i < enc_vec.size(); i++)
-		{
-			dec_str += enc_vec[i];
-		}
-		return dec_str;
-	}
 
 	std::string dec2hex(int d)
 	{
