@@ -1,2 +1,0 @@
-S:\repos\security\message\Debug\message.exe
-S:\repos\security\message\Debug\message.pdb

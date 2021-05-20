@@ -133,15 +133,15 @@ DES::DES(std::string text, std::string key, MODE mode)
 
 std::string DES::encryption()
 {
-       // std::cout << "Plain Text : [" << plaintext << "]\n";
-      //  std::cout << "   Key     : [" << keystring << "]\n";
+        std::cout << "Plain Text : [" << plaintext << "]\n";
+        std::cout << "   Key     : [" << keystring << "]\n";
         binaryText = string2hex(plaintext);
         key = string2hex(keystring);
         key = initialKeySelection(key);
         keyGeneration();
         binaryText = initialPermutation(binaryText);
         splitLeftRight(binaryText);
-       // std::cout << "round     left         right         key\n";
+        std::cout << "round     left         right         key\n";
         for (int round = 1; round <= 16; round++) 
         {
             right = expansionPermutation(right);//F function
@@ -157,25 +157,25 @@ std::string DES::encryption()
                 left = right;
                 right = tmp;
             }
-           // std::cout << std::setw(5) << round << "  [" << hex2string(left) << "]  [" << hex2string(right) << "]  [" << hex2string(keys[round]) << "]\n";
+            std::cout << std::setw(5) << round << "  [" << hex2string(left) << "]  [" << hex2string(right) << "]  [" << hex2string(keys[round]) << "]\n";
         }
         binaryText = lastPermutation(binaryText);//IP inverse
         ciphertext = hex2string(binaryText);
-      //  std::cout << "Cipher Text : [" << ciphertext << "]\n";
+        std::cout << "Cipher Text : [" << ciphertext << "]\n";
 
         return ciphertext;
 }
 std::string DES::decryption()
 {
-   // std::cout << "Cipher Text : [" << ciphertext << "]\n";
-   // std::cout << "    Key     : [" << keystring << "]\n";
+    std::cout << "Cipher Text : [" << ciphertext << "]\n";
+    std::cout << "    Key     : [" << keystring << "]\n";
     binaryText = string2hex(ciphertext);
     key = string2hex(keystring);
     key = initialKeySelection(key);
     keyGeneration();
     binaryText = initialPermutation(binaryText);
     splitLeftRight(binaryText);
-   // std::cout << "round     left         right         key\n";
+    std::cout << "round     left         right         key\n";
     for (int round = 16; round >= 1; round--) 
     {
         right = expansionPermutation(right);
@@ -191,11 +191,11 @@ std::string DES::decryption()
             left = right;
             right = tmp;
         }
-       // std::cout << std::setw(5) << 17 - round << "  [" << hex2string(left) << "]  [" << hex2string(right) << "]  [" << hex2string(keys[round]) << "]\n";
+        std::cout << std::setw(5) << 17 - round << "  [" << hex2string(left) << "]  [" << hex2string(right) << "]  [" << hex2string(keys[round]) << "]\n";
     }
     binaryText = lastPermutation(binaryText);
     plaintext = hex2string(binaryText);
-   // std::cout << "Plain Text : [" << plaintext << "]\n";
+    std::cout << "Plain Text : [" << plaintext << "]\n";
 
     return plaintext;
 }
