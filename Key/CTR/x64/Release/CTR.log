@@ -5,8 +5,8 @@ D:\repos\security\Key\CTR\main.cpp(11,12): warning C4101: 'result' :참조되지
 D:\repos\security\Key\CTR\main.cpp(10,20): warning C4101: 'end' :참조되지 않은 지역 변수입니다.
 D:\repos\security\Key\CTR\main.cpp(10,13): warning C4101: 'start' :참조되지 않은 지역 변수입니다.
   코드를 생성하고 있습니다.
-  1 of 384 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
+  0 of 384 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    3 functions had inline decision re-evaluated but remain unchanged
+    0 functions had inline decision re-evaluated but remain unchanged
   코드를 생성했습니다.
   CTR.vcxproj -> D:\repos\security\Key\CTR\x64\Release\CTR.exe

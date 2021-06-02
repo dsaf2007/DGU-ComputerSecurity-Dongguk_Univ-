@@ -5,7 +5,7 @@ import sys
 passwd = input('enter password :')
 salt = secrets.token_hex(8)
 CEK = secrets.token_hex(8)
-passwd += salt
+passwd += salt.upper()
 
 encoded_string = passwd.encode()
 KEK = hashlib.shake_128(encoded_string).hexdigest(8)
