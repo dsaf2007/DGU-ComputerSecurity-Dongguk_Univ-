@@ -11,35 +11,42 @@ int main()
     std::string plain_text;
     std::getline(readFile, plain_text);
 
-    std::ifstream readKEK("../KEK.txt");
+    std::ifstream readKEK("../KEK.txt");//KEK
     std::string KEK;
     std::getline(readKEK, KEK);
-    //std::cout << KEK << std::endl;
 
-    std::ifstream readCEK("../CEK.txt");
+    std::ifstream readCEK("../CEK.txt");//CEK
     std::string CEK;
     std::getline(readCEK, CEK);
 
-    std::ifstream readNonce("../nonce.txt");
+    std::ifstream readNonce("../nonce.txt");//비표
     std::string nonce;
     std::getline(readNonce, nonce);
 
-    std::string CEK_encrypted;
+    std::string CEK_encrypted;//CEK 암호화 하여 저장
     DES EncCEK(CEK, KEK, MODE::ENCRYPTION);
     CEK_encrypted = EncCEK.encryption();
-
     std::ofstream writeCEK("CEK_encrypted.txt");
     writeCEK << CEK_encrypted;
 
-    CTR enc(plain_text, CEK,nonce);
+    start = clock();
+    CTR enc(plain_text, CEK,nonce);//암호화
     enc.execute();
+    end = clock();
     std::string enc_str = enc.getResult();
+    result = double(end - start);
+    std::cout << "암호화 소요 시간 : " << result << "\n";
+
     std::ofstream writeEnc("enc_str.txt");
     writeEnc << enc_str;
 
-    CTR dec(enc_str, CEK, nonce);
+    start = clock();
+    CTR dec(enc_str, CEK, nonce);//복호화
     dec.execute();
+    end = clock();
     std::string dec_str = dec.getResult();
+    result = double(end - start);
+    std::cout << "암호화 소요 시간 : " << result << "\n";
     std::ofstream writeDec("dec_str.txt");
     writeDec << dec_str;
 

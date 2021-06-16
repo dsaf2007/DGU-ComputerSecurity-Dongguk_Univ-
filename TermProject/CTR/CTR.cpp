@@ -3,14 +3,9 @@
 CTR::CTR(std::string input, std::string key_, std::string nonce_)
 {
 	input_string = input;
-	/*for (int i = 0; i < 8; i++)
-	{
-		nonce += arr[rand() % 16];
-	}*/
 	nonce = nonce_;
 	key = key_;
 }
-
 
 void CTR::setKey(std::string key_)
 {
@@ -30,7 +25,7 @@ void CTR::parseString()
 	if (length % 16 != 0)
 	{
 		str_vec.push_back(input_string.substr(16 * block_num, length % 16));
-		for (int j = 0; j < 16 - last_block_length; j++)
+		for (int j = 0; j < 16 - last_block_length; j++)//마지막 블록 문자열 64비트로 채움(xor연산 이후 삭제)
 		{
 			str_vec.back() += '0';
 		}
@@ -69,7 +64,7 @@ void CTR::encdec(int x, int n)
 		DES des1(counterStream(i), key, MODE::ENCRYPTION);
 		result_vec[i] = XORBlock(des1.encryption(), str_vec[i]);
 	}
-	if (last_block_length != 0)
+	if (last_block_length != 0)//ctr은 패딩을 하지 않기 때문에 xor이후에 채운 글자 삭제
 	{
 		result_vec.back() = result_vec.back().substr(0, last_block_length);
 	}
@@ -107,7 +102,7 @@ void CTR::nonMulti()
 		DES des1(counterStream(i), key, MODE::ENCRYPTION);
 		result_vec[i] = XORBlock(des1.encryption(), str_vec[i]);
 	}
-	if (last_block_length != 0)
+	if (last_block_length != 0)//ctr은 패딩을 하지 않기 때문에 xor이후에 채운 글자 삭제
 	{
 		result_vec.back() = result_vec.back().substr(0, last_block_length);
 	}
@@ -118,7 +113,7 @@ void CTR::execute()
 	parseString();
 	result_vec.resize(str_vec.size());
 	int n = getThreadNum();
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < n; i++)//멀티스레딩
 	{
 		threads.emplace_back(std::thread(&CTR::encdec, this, i, n));
 	}
@@ -126,7 +121,7 @@ void CTR::execute()
 		thread.join();
 }
 
-std::string CTR::getResult()
+std::string CTR::getResult()// 암호화 복호화 결과 반환
 {
 	std::string enc_str = "";
 	for (int i = 0; i < result_vec.size(); i++)
