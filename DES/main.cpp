@@ -7,7 +7,7 @@
 int main()
 {
     std::cout << "==================ENCRYPTION==================\n";
-    DES des1("0123456789ABCDEF", "85E813540F0AB405", MODE::ENCRYPTION);
+    DES des1("0123456789ABC", "85E813540F0AB405", MODE::ENCRYPTION);
     des1.encryption();
     std::cout << "==================DECRYPTION==================\n";
     DES des2("E5A951F59B3160C0", "85E813540F0AB405", MODE::DECRYPTION);

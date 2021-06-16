@@ -1,0 +1,2 @@
+D:\repos\security\Key\CTR\x64\Release\CTR.exe
+D:\repos\security\TermProject\CTR\x64\Release\CTR.exe
