@@ -1,3 +1,0 @@
-﻿  main.cpp
-S:\repos\3-2\OTP\main.cpp(78,12): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  OTP.vcxproj -> S:\repos\3-2\OTP\x64\Debug\OTP.exe

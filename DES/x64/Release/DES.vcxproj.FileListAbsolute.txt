@@ -1,2 +1,0 @@
-S:\repos\3-2\DES\x64\Release\DES.exe
-D:\repos\security\DES\x64\Release\DES.exe

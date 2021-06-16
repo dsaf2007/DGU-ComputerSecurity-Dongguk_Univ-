@@ -1,2 +1,0 @@
-S:\repos\3-2\passwd\Debug\passwd.exe
-S:\repos\3-2\passwd\Debug\passwd.pdb

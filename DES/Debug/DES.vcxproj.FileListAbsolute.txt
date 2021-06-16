@@ -1,2 +1,0 @@
-S:\repos\3-2\DES\Debug\DES.exe
-S:\repos\3-2\DES\Debug\DES.pdb

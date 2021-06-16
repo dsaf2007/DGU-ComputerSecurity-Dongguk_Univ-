@@ -28,11 +28,11 @@ print(_sig)
 x509 = X509() # 인증서를 사용할 수 있도록 하는 메서드 제공
 x509.set_pubkey(pub_key)
 # 비교 대상
-cc2 = 'HI'
+cc2 = '_message'
 t_hash = SHA.new(cc2.encode('utf-8')).digest()
 # 사용법: verify(x509, 전자서명, 비교할 해시, 'sha256')
 try:
-    
+    verify(x509,_sig,t_hash,'sha256')
     app = QtWidgets.QApplication(sys.argv)
     QMessageBox.information(None, 'Success!', u"변조되지않았습니다.", QMessageBox.Ok)
     sys.exit(1)
