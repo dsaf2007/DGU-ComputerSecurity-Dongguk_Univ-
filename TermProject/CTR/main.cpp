@@ -46,7 +46,7 @@ int main()
     end = clock();
     std::string dec_str = dec.getResult();
     result = double(end - start);
-    std::cout << "암호화 소요 시간 : " << result << "\n";
+    std::cout << "복호화 소요 시간 : " << result << "\n";
     std::ofstream writeDec("dec_str.txt");
     writeDec << dec_str;
 

@@ -97,6 +97,8 @@ int CTR::getThreadNum()
 
 void CTR::nonMulti()
 {
+	parseString();
+	result_vec.resize(str_vec.size());
 	for (int i = 0; i < str_vec.size(); i++)
 	{
 		DES des1(counterStream(i), key, MODE::ENCRYPTION);
